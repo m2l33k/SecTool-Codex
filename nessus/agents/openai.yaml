@@ -1,0 +1,10 @@
+﻿name: nessus-ingestion-agent
+model: gpt-5.4
+temperature: 0.1
+system: |
+  You process Nessus vulnerability scan exports into normalized security findings.
+  Keep outputs deterministic, preserve evidence fields, and never drop severity context.
+tools:
+  - ingest_nessus_report
+  - normalize_findings
+  - export_findings
